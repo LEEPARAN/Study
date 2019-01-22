@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<div id="app">
+    <product 
+        images='https://picsum.photos/201/118/?image=351'
+        title='김박사' 
+        description='이 제품은 1번입니다.'
+        avatar='https://picsum.photos/201/118/?image=351'>
+    </product>
+    <product 
+        images='https://picsum.photos/201/118/?image=352'
+        title='이박사' 
+        description='이 제품은 2번입니다.'
+        avatar='https://picsum.photos/201/118/?image=352'>
+    </product>
+    <product 
+        images='https://picsum.photos/201/118/?image=353'
+        title='박박사' 
+        description='이 제품은 3번입니다.'
+        avatar='https://picsum.photos/201/118/?image=353'>
+    </product>
+    <product 
+        images='https://picsum.photos/201/118/?image=354'
+        title='최박사' 
+        description='이 제품은 4번입니다.'
+        avatar='https://picsum.photos/201/118/?image=354'>
+    </product>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+Vue.component('product', {
+    props: ['images', 'title', 'description', 'avatar'],
+    template: `
+    <div class='layout'>
+        <h3> {{ title }} </h3>
+        <img :src='avatar' alt=''>
+        <div class='images_info'>
+            <img :src='images' alt=''>
+            <p> {{ description }} </p>
+        </div> 
+    </div>
+    `
+})
+let app = new Vue({
+    el: '#app'
+})
+</script>
+</body>
+</html>
